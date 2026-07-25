@@ -1,11 +1,3 @@
-/* ==========================================================================
-   Ajay Jaiswal — PORTFOLIO
-   Vanilla JS — no dependencies.
-   Sections: Loader, Progress bar, Cursor glow, Particles, Navbar behavior,
-   Mobile menu, Typing animation, Scroll reveal, Skill bars, Counters,
-   Timeline fill, Testimonial slider, Contact form, Ripple, Back-to-top.
-   ========================================================================== */
-
 (() => {
   'use strict';
 
@@ -225,11 +217,13 @@
   ------------------------------------------------------------------ */
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('mobileOverlay');
 
   function toggleMobileMenu(forceClose) {
     const shouldOpen = forceClose === false ? false : !hamburger.classList.contains('is-active');
     hamburger.classList.toggle('is-active', shouldOpen);
     mobileMenu.classList.toggle('is-open', shouldOpen);
+    if (mobileOverlay) mobileOverlay.classList.toggle('is-open', shouldOpen);
     hamburger.setAttribute('aria-expanded', String(shouldOpen));
     document.body.style.overflow = shouldOpen ? 'hidden' : '';
   }
@@ -238,6 +232,11 @@
   mobileMenu.querySelectorAll('a').forEach((link) => {
     link.addEventListener('click', () => toggleMobileMenu(false));
   });
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener('click', () => toggleMobileMenu(false));
+  }
+
+  
 
   /* ------------------------------------------------------------------
      7. SMOOTH SCROLL FOR ALL ANCHOR LINKS
