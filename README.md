@@ -4,7 +4,7 @@ A modern, responsive personal portfolio website showcasing my skills, projects, 
 
 ## 🌐 Live Demo
 
-🔗 [https://your-portfolio-link.com](https://ajay-kumar-jaiswal.github.io/Portfolio/)
+🔗 [Ajay_Kumar_Jaiswal](https://ajay-kumar-jaiswal.github.io/Portfolio/)
 
 
 ---
