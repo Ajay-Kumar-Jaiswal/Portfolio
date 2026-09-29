@@ -402,36 +402,126 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 
 /* ---------- Mobile menu (side aside drawer) ---------- */
 .mobile-menu {
-  position: fixed; top: 0; right: 0; bottom: 0; z-index: 999;
-  width: min(82vw, 360px);
-  height: 100vh;
-  background:
-    radial-gradient(600px 400px at 100% 0%, rgba(110, 86, 207, 0.28), transparent 60%),
-    radial-gradient(600px 500px at 100% 100%, rgba(34, 211, 238, 0.22), transparent 60%),
-    var(--bg);
-  border-left: 1px solid var(--glass-border);
-  box-shadow: -20px 0 60px rgba(0,0,0,0.5);
-  display: flex; flex-direction: column; justify-content: center;
-  padding: 100px 28px 40px;
-  transform: translateX(100%);
-  opacity: 1;
-  transition: transform 0.45s var(--ease-out);
-  pointer-events: none;
-  overflow-y: auto;
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+
+    /* Much smaller than the current 82vw / 360px */
+    width: min(78vw, 290px);
+
+    z-index: 999;
+
+    background:
+        radial-gradient(
+            500px 350px at 100% 0%,
+            rgba(110, 86, 207, 0.20),
+            transparent 60%
+        ),
+        radial-gradient(
+            500px 400px at 100% 100%,
+            rgba(34, 211, 238, 0.16),
+            transparent 60%
+        ),
+        var(--bg);
+
+    border: 1px solid var(--glass-border);
+    border-radius: 22px;
+
+    box-shadow:
+        -15px 0 40px rgba(0, 0, 0, 0.35),
+        0 10px 40px rgba(0, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 60px 22px 28px;
+
+    transform: translateX(calc(100% + 20px));
+    opacity: 1;
+
+    transition: transform 0.4s var(--ease-out);
+
+    pointer-events: none;
+    overflow-y: auto;
 }
-.mobile-menu.is-open { transform: translateX(0); pointer-events: auto; }
-.mobile-menu nav { display: flex; flex-direction: column; gap: 6px; }
+
+.mobile-menu.is-open {
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+
+/* Menu links */
+
+.mobile-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .mobile-menu__link {
-  font-family: var(--font-display);
-  font-size: 1.6rem; font-weight: 600;
-  padding: 14px 4px;
-  display: flex; align-items: baseline; gap: 16px;
-  border-bottom: 1px solid var(--glass-border);
-  color: var(--text-secondary);
+    font-family: var(--font-display);
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    padding: 12px 2px;
+
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+
+    border-bottom: 1px solid var(--glass-border);
+
+    color: var(--text-secondary);
 }
-.mobile-menu__link span { font-family: var(--font-mono); font-size: 1rem; color: var(--text-primary); }
-.mobile-menu__link:first-child { color: var(--text-muted); font-size: 0.9rem; }
-.mobile-menu__footer { margin-top: 40px; }
+
+.mobile-menu__link span {
+    font-family: var(--font-mono);
+    font-size: 0.95rem;
+    color: var(--text-primary);
+}
+
+.mobile-menu__link:first-child {
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+}
+
+
+/* Resume button */
+
+.mobile-menu__footer {
+    margin-top: 28px;
+}
+
+.mobile-menu__footer .btn {
+    padding: 13px 18px;
+    font-size: 0.9rem;
+}
+
+
+/* Smaller phones */
+
+@media (max-width: 380px) {
+    .mobile-menu {
+        width: min(80vw, 270px);
+        right: 8px;
+        top: 8px;
+        bottom: 8px;
+        padding: 50px 18px 22px;
+    }
+
+    .mobile-menu__link {
+        font-size: 1.15rem;
+        padding: 10px 2px;
+    }
+
+    .mobile-menu__link span {
+        font-size: 0.88rem;
+    }
+}
+  
 
 /* ==========================================================================
    HERO
@@ -556,12 +646,34 @@ h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; letter-spac
 
 .about__lead { font-size: 1.2rem; color: var(--text-primary); margin-bottom: 18px; font-weight: 500; }
 .about__body { color: var(--text-secondary); margin-bottom: 32px; }
-.profile{
-  height: 335px;
-  width: 321px;
-  border-radius: 50%;
-  margin:0px 35px 168px 45px;
+.profile {
+    width: min(321px, 80vw);
+    height: min(335px, 80vw);
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
 }
+.about__media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .about__media {
+        justify-content: center;
+    }
+
+    .profile {
+        width: min(335px, 82vw);
+        height: min(335px, 82vw);
+        margin: 0 auto;
+    }
+}
+
 .about__facts { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 32px; }
 .fact { padding: 18px 20px; border-radius: var(--r-md); display: flex; flex-direction: column; gap: 6px; }
 .fact__label { font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); }
@@ -930,4 +1042,94 @@ a.contact__row:hover {
 @media (max-width: 420px) {
   .hero__cta { flex-direction: column; width: 100%; }
   .hero__cta .btn { width: 100%; }
+}
+
+@media (max-width: 860px) {
+
+    .project-card__media {
+        height: auto;
+        min-height: 0;
+        overflow: hidden;
+    }
+
+    .project-card__media .net {
+        width: 100%;
+        height: auto;
+        max-width: 100%;
+        object-fit: contain;
+        display: block;
+        border-radius: 0;
+    }
+
+}
+
+
+@media (max-width: 860px) {
+    .mobile-menu {
+        width: 270px;
+        max-width: calc(100vw - 32px);
+
+        top: 12px;
+        right: 12px;
+        bottom: 12px;
+
+        padding: 42px 18px 22px;
+
+        border-radius: 20px;
+    }
+
+    .mobile-menu__link {
+        font-size: 1.08rem;
+        padding: 9px 2px;
+        gap: 12px;
+    }
+
+    .mobile-menu__link span {
+        font-size: 0.82rem;
+    }
+
+    .mobile-menu__footer {
+        margin-top: 22px;
+    }
+
+    .mobile-menu__footer .btn {
+        width: 100%;
+        padding: 11px 14px;
+        font-size: 0.85rem;
+    }
+}
+
+
+/* Very small phones */
+@media (max-width: 380px) {
+    .mobile-menu {
+        width: 250px;
+        max-width: calc(100vw - 24px);
+
+        top: 8px;
+        right: 8px;
+        bottom: 8px;
+
+        padding: 34px 16px 18px;
+        border-radius: 18px;
+    }
+
+    .mobile-menu__link {
+        font-size: 1rem;
+        padding: 8px 0;
+        gap: 10px;
+    }
+
+    .mobile-menu__link span {
+        font-size: 0.78rem;
+    }
+
+    .mobile-menu__footer {
+        margin-top: 18px;
+    }
+
+    .mobile-menu__footer .btn {
+        padding: 10px 12px;
+        font-size: 0.82rem;
+    }
 }
