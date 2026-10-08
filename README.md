@@ -128,10 +128,10 @@ The portfolio website itself is built using zero external frontend frameworks or
 
 ```
 Portfolio/
-├── README.md
 ├── assets/
 │   ├── port.jpeg
 │   └── Resume.pdf
+├── README.md
 ├── index.html
 ├── script.js
 └── style.css
