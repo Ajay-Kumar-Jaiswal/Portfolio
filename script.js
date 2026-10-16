@@ -1,3 +1,17 @@
+/* ==========================================================================
+   AJAY KUMAR JAISWAL — PORTFOLIO CLIENT ENGINE
+   High-performance Vanilla JavaScript — Zero dependencies
+   Features:
+   - Dark / Light Theme Switching with LocalStorage Persistence
+   - Sticky Glass Navbar with Active Section Spy
+   - Accessible Mobile Drawer with Focus Management
+   - Scroll Progress Indicator
+   - 1-Click Copy Email to Clipboard with Live Feedback
+   - Accessible Form Validation with Mailto Fallback
+   - Hardware-Accelerated IntersectionObserver Scroll Reveal
+   - Smooth Back-to-Top Button
+   ========================================================================== */
+
 (() => {
   'use strict';
 
