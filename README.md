@@ -10,17 +10,19 @@ The purpose of this portfolio is to present a focused, recruiter-friendly summar
 
 ## Featured Projects
 
-### 1. FeedbackIQ — AI Customer Feedback Analyzer
-- **GitHub**: [https://github.com/Ajay-Kumar-Jaiswal/FeedbackIQ](https://github.com/Ajay-Kumar-Jaiswal/FeedbackIQ)
-- **Category**: AI & Intelligence
-- **Overview**: An AI-powered customer feedback analysis application that integrates the Google Gemini API to automatically classify sentiment, categories, priorities, and generate summaries from user feedback.
+### 1. DevProfile AI — AI-Powered Developer Profile Analyzer
+- **GitHub**: [https://github.com/Ajay-Kumar-Jaiswal/devprofile-ai](https://github.com/Ajay-Kumar-Jaiswal/devprofile-ai)
+- **Live Demo**: [https://devprofile-ai.vercel.app/](https://devprofile-ai.vercel.app/)
+- **Category**: AI Development · Career Intelligence
+- **Overview**: An AI-powered developer career platform that analyzes GitHub repositories and public profile signals to evaluate portfolio quality across five core pillars, provide deterministic scores, and generate AI-assisted improvement roadmaps using Groq LLM inference.
 - **Key Capabilities**:
-  - AI-driven sentiment analysis, categorization, and priority detection
-  - Automated executive feedback summarization
-  - Structured Gemini API prompt validation and fallback analysis handling
-  - Secure JWT authentication with Bcrypt password hashing
-  - Relational persistence with MySQL
-- **Technologies**: Python, Flask, React, MySQL, Gemini API, JWT, Bcrypt
+  - Deterministic 0–100 portfolio score across 5 documented hygiene pillars (documentation, tech breadth, maintenance, completeness, community)
+  - AI-assisted feedback, evidence-based strengths, and actionable career improvement recommendations powered by Groq
+  - Repository metadata analysis (languages, stars, topics, license, push recency)
+  - Multi-phase structured action roadmaps with milestone impact scoring
+  - Secure authentication via GitHub OAuth 2.0 and JWT sessions with Argon2id password hashing
+  - Relational persistence with PostgreSQL / SQLite and SQLAlchemy ORM
+- **Technologies**: React 18, TypeScript, Vite, FastAPI, Python, Groq AI, PostgreSQL, Tailwind CSS, GitHub API
 
 ### 2. SecureBank — Banking Management System
 - **GitHub**: [https://github.com/Ajay-Kumar-Jaiswal/securebank-banking-management-system](https://github.com/Ajay-Kumar-Jaiswal/securebank-banking-management-system)
